@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import App from './App';
 
 const TableHeader = () =>
 {
@@ -11,18 +12,18 @@ const TableHeader = () =>
         </thead>
     )
 };
-const TableBody = props =>
-{
-    const rows = props.characterData.map((row, index) =>
-    {
+
+const TableBody = props => {
+    const rows = props.characterData.map((row, index) => {
         return (
             <tr key={index}>
-                <td>{rows.name}</td>
-                <td>{rows.job}</td>
+                <td>{row.name}</td>
+                <td>{row.job}</td>
             </tr>
         )
     });
-    return <tbody>{rows}</tbody>;
+
+    return <tbody>{rows}</tbody>
 };
 
 class Table extends Component
